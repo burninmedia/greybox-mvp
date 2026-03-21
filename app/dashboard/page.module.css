@@ -1,0 +1,403 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--text-secondary);
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Header */
+.header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.userEmail {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Main */
+.main {
+  padding: 48px 0 80px;
+}
+
+.welcome {
+  margin-bottom: 32px;
+}
+
+.welcome h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.welcome p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* Stats Row */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  padding: 20px;
+}
+
+.statLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.statValue {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.statLimit {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.statBar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.statBarFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.statSub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.proBadge {
+  background: var(--accent);
+  color: #000;
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* API Key Card */
+.apiKeyCard {
+  margin-bottom: 24px;
+}
+
+.apiKeyHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.apiKeyHeader h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.apiKeyHeader p {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.apiKeyRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 8px;
+}
+
+.apiKeyValue {
+  flex: 1;
+  font-size: 14px;
+  background: transparent;
+  color: var(--text-primary);
+  padding: 0;
+}
+
+.apiKeyActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.apiKeyNote {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Events Section */
+.eventsSection {
+  margin-bottom: 24px;
+}
+
+.eventsSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.eventsSectionHeader h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sampleNote {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.eventsTable {
+  padding: 0;
+  overflow: hidden;
+}
+
+.eventsTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.eventsTable th {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+.eventsTable td {
+  padding: 14px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.eventsTable tr:last-child td {
+  border-bottom: none;
+}
+
+.eventsTable tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+.tdTime {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.eventTime {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.eventDate {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.agentId {
+  font-size: 12px;
+  background: var(--bg-secondary);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--accent);
+}
+
+.sessionId {
+  font-size: 12px;
+  background: var(--bg-secondary);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--text-secondary);
+}
+
+.actionBadge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'SF Mono', monospace;
+}
+
+.confidenceCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.confidenceBar {
+  width: 60px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.confidenceFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.confidenceCell span {
+  font-size: 12px;
+  color: var(--text-secondary);
+  width: 32px;
+}
+
+.toolsCell {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.toolCode {
+  font-size: 11px;
+  background: var(--bg-secondary);
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: var(--text-secondary);
+}
+
+.noTools {
+  color: var(--text-muted);
+}
+
+/* Upgrade Card */
+.upgradeCard {
+  border-color: rgba(0, 212, 170, 0.3);
+}
+
+.upgradeContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.upgradeContent h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.upgradeContent p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.upgradeRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.upgradePrice {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.upgradePrice span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+  .upgradeContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .headerRight {
+    gap: 8px;
+  }
+  .userEmail {
+    display: none;
+  }
+}
