@@ -1,14 +1,18 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+// NOTE: This middleware is a NO-OP for GitHub Pages static deployment.
+// Auth is handled client-side via localStorage/sessionStorage.
+// For Vercel production deployment, restore the real Clerk middleware:
+//   import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+//   const isProtectedRoute = createRouteMatcher(["/dashboard(.*)"]);
+//   export default clerkMiddleware(async (auth, req) => {
+//     if (isProtectedRoute(req)) { await auth.protect(); }
+//   });
 
-const isProtectedRoute = createRouteMatcher(["/dashboard(.*)"]);
-
-export default clerkMiddleware(async (auth, req) => {
-  if (isProtectedRoute(req)) {
-    await auth.protect();
-  }
-});
+// GitHub Pages has no server-side auth — all pages are public.
+// The dashboard checks localStorage client-side and redirects if not logged in.
 
 export const config = {
-  matcher: ["/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)"],
-  apiPrefix: "/api/v1",
+  matcher: [
+    // Skip Next.js internals and static files
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+  ],
 };

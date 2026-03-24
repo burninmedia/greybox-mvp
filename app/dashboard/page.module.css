@@ -386,6 +386,69 @@
   color: var(--text-secondary);
 }
 
+/* Integration Guide */
+.integrationCard {
+  margin-bottom: 24px;
+}
+
+.integrationHeader {
+  margin-bottom: 24px;
+}
+
+.integrationHeader h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.integrationHeader p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.integrationGrid {
+  display: grid;
+  gap: 24px;
+}
+
+.integrationStep {
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.stepTitle {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.stepDesc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.codeBlock {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px;
+  overflow-x: auto;
+}
+
+.codeBlock pre {
+  margin: 0;
+}
+
+.codeBlock code {
+  font-size: 12px;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  color: var(--accent);
+  white-space: pre;
+}
+
 @media (max-width: 768px) {
   .statsRow {
     grid-template-columns: 1fr;
@@ -400,4 +463,24 @@
   .userEmail {
     display: none;
   }
+}
+
+.demoNotice {
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.2);
+  padding: 1rem 1.25rem;
+  margin-bottom: 0;
+}
+
+.demoNotice p {
+  color: #93c5fd;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.upgradeNote {
+  font-size: 0.75rem;
+  color: #888;
+  margin: 0.5rem 0 0;
+  text-align: center;
 }
